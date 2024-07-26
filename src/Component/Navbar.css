@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navnavbar {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    height: 8rem;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 100px rgba(227, 228, 237, 0.37);
+    /* margin-top: -15px; */
+    z-index: 5;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(197, 199, 212, 0.37) ;
+
+}
+
+.navbarinput {
+    margin-top: 20px;
+    margin-left: 1.5rem;
+    width: 65%;
+    height: 30px;
+    z-index: 5;
+    border: 1px solid rgb(80, 79, 79);
+    padding: 10px;
+   
+}
+
+.ultext {
+    display: flex;
+
+    text-align: center;
+    z-index: 5;
+    margin-left: 6rem;
+    
+    /* margin-top: 5rem; */
+}
+
+.linavbar {
+
+    list-style: none;
+
+    margin-left: 6rem;
+    /* margin-top: -40px; */
+    margin-top: -30px;
+    cursor: pointer;
+    z-index: 5;
+    font-size: 1.3rem;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+.linavbarr {
+
+    list-style: none;
+
+    margin-left: 2rem;
+    /* margin-top: -40px; */
+    margin-top: -27px;
+    cursor: pointer;
+    z-index: 5;
+    font-size: 1.3rem;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+   }
+
+   .linavbarrr {
+
+    list-style: none;
+
+    margin-left: 1rem;
+    /* margin-top: -40px; */
+    margin-top: -30px;
+    color: rgb(87, 85, 85);
+    cursor: pointer;
+    z-index: 5;
+    font-size: 1.3rem;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+   }
+.linavbar:hover {
+    color:red;
+    transform: scale(1.1);
+    transition: 0s;
+}
+
+.active {
+    color:red;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.buttonn {
+    padding: 8px 14px;
+    position: absolute;
+    border-radius: 5px;
+   margin-top: 8px;
+    margin-left: 1.5rem;
+    /* margin-right: 3rem; */
+    cursor: pointer;
+    background-color: rgb(32, 32, 32);
+    border-color:  rgb(32, 32, 32);
+
+    height: 3.5rem;
+    font-size: 14px;
+  
+    z-index: 5;
+    text-decoration: none;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    z-index: 5;
+    transition: 0s;
+}
+
+.logoo {
+    position: absolute;
+    /* margin-top: 19px; */
+    cursor: grab;
+    margin-left: -4rem;
+    margin-top: 12px;
+    font-size: 30px;
+    z-index: 5;
+
+}
+
+.mobile {
+    display: none;
+}
+
+.menuu {
+    display: none
+}
+
+
+
+.buttonmoblie {
+
+    padding: 8px 14px;
+    position: absolute;
+    border-radius: 5px;
+    margin-top: 14px;
+    margin-left: -4rem;
+    /* margin-right: 3rem; */
+    cursor: pointer;
+    background-color: green;
+    border-color: green;
+
+    height: 3rem;
+    font-size: 1rem;
+}
+
+.buttonmoblie:hover {
+    transform: scale(1.1);
+    transition: 0s;
+}
+
+.buttontwo {
+    margin-right: 29rem;
+  position: relative;
+    margin-top: 10px;
+    width: 20%;
+    background-color: green;
+    border-radius: 5px;
+
+    height: 3rem;
+    backdrop-filter: opacity(1);
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+   background-color: rgba(12, 10, 10, 0.5);
+  z-index: 10; 
+
+  }
+
+
+@media screen and (max-width: 930px) {
+
+    .buttontwo {
+        display: none;
+    }
+.location{
+    display:none;
+}
+    .logo {
+        font-size: 30px;
+        margin-left: 1px;
+        transition: 0.2s ease-in-out;
+    }
+
+    .navbarinput {
+        /* margin-top: 70px; */
+        margin-left: -4pc;
+        width: 140%;
+    }
+
+    .ultext {
+        display: none;
+    }
+
+    .buttonn {
+        display: none;
+        /* padding: 5px 8px;
+        right: 40px;
+        left: -20px;
+        top: 15px;
+        transition: 0.2s ease-in-out; */
+    }
+
+    .linavbarlink {
+        display: none;
+    }
+
+    .mobile {
+        display: inline;
+        position: fixed;
+        padding-right: 30px;
+        right: 100px;
+        left: 100px;
+        width: 100%;
+        height: 100%;
+        justify-self: center;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(30px);
+        box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+        /* background-color: cadetblue; */
+        transition: 0.1 ease-in;
+        z-index: 100px;
+
+    }
+
+    .mobile-link li {
+        position: relative;
+
+        display: grid;
+        margin: 20px 30px;
+
+    }
+
+    .mobile-link ul {
+        position: relative;
+        display: inline;
+    }
+
+    .menuu {
+        display: inline;
+        border: none;
+        font-size: 32px;
+        background-color: transparent;
+        margin-top: 1rem;
+        margin-left: 15rem;
+    }
+
+
+
+}
+
+
+@media screen and(min-width:450px) {
+    .navnavbar {
+        height: 10px;
+        transition: 0.2 ease-in-out;
+    }
+
+    .logo {
+        font-size: 5px;
+        top: 16px;
+        left: 100px;
+        transition: 0.2 ease-in-out;
+    }
+
+    .button {
+        padding: 2px 5px;
+        /* right: 20px;
+        border-radius: 3px;
+        top: 16px;
+        font-size: 10px;
+        transition: 0.2 ease-in-out; */
+    }
+
+    .menuu {
+        font-size: 15px;
+        /* margin-top: -6px; */
+        transition: 0.2s ease-in-out;
+    }
+
+    .mobile {
+        display: inline;
+        /* position: fixed; */
+        right: 0px;
+        width: 15%;
+        height: 100%;
+        text-align: center;
+        border: 1px solid black;
+        /* background-color: cadetblue; */
+        transition: 0.1 ease-in;
+
+    }
+
+    .mobile-link li {
+        display: grid;
+        /* margin: 20px 30px; */
+
+    }
+
+    .mobile-link ul {
+        display: inline;
+    }
+
+}

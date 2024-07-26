@@ -1,0 +1,154 @@
+/* .formcenter{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form{
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+
+   
+}
+.forminput{
+    padding: 10px;
+    border: 1px solid black;
+
+    border-radius: 10px;
+    
+  
+}
+.forminput:hover{
+    background-color: #f0f0f0;
+}
+.formbutton{
+    padding: 8px 14px;
+    width: 100%;
+    max-width: 300px;
+   border-radius: 10px;
+    cursor: pointer;
+  background-color:green;
+  border-color: green;
+margin-top: 20px;
+  height: 3rem;
+  font-size: 1rem;
+}
+.formlink{
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+    
+}
+.formp{
+    cursor: pointer;
+}
+.formotp{
+    text-align: center;
+    justify-content: space-between;
+    margin-left: 1.7rem;
+   margin-top: 20px;
+    padding:center;
+    align-items: center;
+    width: 2rem;
+   height: 3rem;
+   border-radius: 8px;
+background-color: transparent;
+}
+.error{
+    color: red;
+
+}
+.formicons{
+    display: flex;
+    justify-content: end;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    
+} */
+
+.form{
+    border: 2px solid black;
+    /* text-align: center; */
+    display: grid;
+    justify-content: center;
+    padding: 1px 10px 15px 10px;
+    width: 23rem;
+    border-radius: 1rem;
+    margin-top: 10px;
+    /* background-color: cadetblue; */
+    
+}
+.formcenter{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    
+}
+.formcentersignup{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.formname{
+    font-size: 1rem;
+    margin-top: 10px;
+}
+.forminput{
+   width: 20rem;
+   height: 2rem;
+   border: 1px solid black;
+   border-radius: 8px;
+   margin-top: 5px;
+   padding-left: 5px;
+   
+
+
+}
+.formbutton{
+    padding: 8px 14px;
+    width: 100%;
+    max-width: 320px;
+   border-radius: 10px;
+    cursor: pointer;
+  background-color:green;
+  border-color: green;
+  color: antiquewhite;
+margin-top: 20px;
+  height: 3rem;
+  font-size: 1rem;
+}
+.formlink{
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+    
+}
+.formbutttonn{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width:10rem;
+    height: 2rem;
+    font-size:  1.5rem;
+    background-color: cadetblue;
+    border-color: cadetblue;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.h{
+    margin-top: 10px;
+}
+.account{
+    margin-top: 15px;
+}
+.formp{
+    cursor: pointer;
+}
+.fromtop{
+    margin-top: 10px;
+}
