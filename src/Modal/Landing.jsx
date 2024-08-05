@@ -8,6 +8,8 @@ import Fruits from '../Pages/Fruits';
 import Tea from '../Pages/Tea';
 import Nandini from '../Pages/Nandini';
 import Footer from '../Component/Footer';
+import Cart from '../Pages/Cart';
+import { WishView } from '../Pages/WishView';
 
 
 
@@ -17,6 +19,11 @@ export default function Landing() {
     if(page === "fruits") return(<><Navbar /><Fruits /><Footer/></>)
     if(page === "tea") return(<><Navbar /><Tea /><Footer/></>)
     if(page === "nandini") return(<><Navbar /><Nandini /><Footer/></>)
+    if(page === "cart") return(<><Navbar /><Cart /><Footer/></>)
+    if(page === "wish") return(<><Navbar /><WishView/><Footer/></>)
+
+
+
 
 
 

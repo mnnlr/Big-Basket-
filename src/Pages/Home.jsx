@@ -7,16 +7,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Fruits from './Fruits';
 import ProductsListHome from '../Component/ProductsListHome';
+import { CardShow } from '../Component/CardShow';
 
 export default function Home() {
     const cards = [
         {
-            
+
             image: 'https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/41a0810e-1fc3-46e4-9d2c-7d9e79e0aa29/hp_f&v_m_fresh-vegetables_480_250923.jpg?tr=w-1920,q=80'
 
         },
         {
-          
+
             image: 'https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/41a0810e-1fc3-46e4-9d2c-7d9e79e0aa29/hp_f&v_m_fresh-fruits_480_250923.jpg?tr=w-1920,q=80'
         },
         {
@@ -25,26 +26,26 @@ export default function Home() {
         {
             image: 'https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/41a0810e-1fc3-46e4-9d2c-7d9e79e0aa29/hp_f&v_m_herbs-&-seasoning_480_250923.jpg?tr=w-1920,q=80'
         },
-      
+
     ]
-    const Daily=[
+    const Daily = [
         {
-            image:"https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_atta-flour-staplesStorefront_m_480_250323_01.jpg?tr=w-1920,q=80"
+            image: "https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_atta-flour-staplesStorefront_m_480_250323_01.jpg?tr=w-1920,q=80"
         },
         {
-            image:"https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_rice-staplesStorefront_m_480_250323_02.jpg?tr=w-1920,q=80"
+            image: "https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_rice-staplesStorefront_m_480_250323_02.jpg?tr=w-1920,q=80"
         },
         {
-            image:"https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_dals-pulses-staplesStorefront_m_480_250323_03.jpg?tr=w-1920,q=80"
+            image: "https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_dals-pulses-staplesStorefront_m_480_250323_03.jpg?tr=w-1920,q=80"
         },
         {
-            image:"https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_cooking-oils-staplesStorefront_m_480_250323_04.jpg?tr=w-1920,q=80"
+            image: "https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_cooking-oils-staplesStorefront_m_480_250323_04.jpg?tr=w-1920,q=80"
         },
         {
-            image:"https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_dry-fruits-staplesStorefront_m_480_250323_05.jpg?tr=w-1920,q=80"
+            image: "https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_dry-fruits-staplesStorefront_m_480_250323_05.jpg?tr=w-1920,q=80"
         },
         {
-            image:"https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_salt-staplesStorefront_m_480_250323_06.jpg?tr=w-1920,q=80"
+            image: "https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_salt-staplesStorefront_m_480_250323_06.jpg?tr=w-1920,q=80"
         },
     ]
     const data = [
@@ -152,9 +153,9 @@ export default function Home() {
             <div className='w-9/12 m-auto  rounded-xl '>
                 <div className='image relative  m-10 ' >
                     <Carousel showArrows={false}
-                        showThumbs={false} 
+                        showThumbs={false}
                         autoPlay
-                        autoplaySpeed= {2000}
+                        autoplaySpeed={2000}
                         showIndicators={false}
                         showStatus={false}
                         autoFocus={true} className=' '>
@@ -175,13 +176,23 @@ export default function Home() {
                 </div>
             </div>
 
+            <div className='w-8/12 m-auto ml-3 '>
+                <h2 className='text-2xl mt-1 ml-6 ' >
+                    <b>Fresh Fruits</b></h2>
+                <div className='mt-3 '>
+                    <CardShow />
+                </div>
+            </div>
+
+
+            
             <div className='w-8/12 m-auto '>
                 <h2 className='text-2xl mt-1 ml-6' >
                     <b>My Smart Basket</b></h2>
 
                 <div className='mt-3'>
-                    
-                      <ProductsListHome />
+
+                    <ProductsListHome />
                     {/* <Slider {...settings}>
                         {
                             cards.map((card, i) => (
@@ -218,7 +229,8 @@ export default function Home() {
                 <h2 className='text-2xl mt-4 ml-6' >
                     <b>Best seller</b></h2>
                 <div className='mt-3'>
-                     <ProductsListHome />
+                    <ProductsListHome />
+
                     {/* <Slider {...settings}>
                         {
                             data.map((card, i) => (
@@ -253,35 +265,40 @@ export default function Home() {
                 <h2 className='text-2xl mt-4' >
                     <b>Fruits & Vegetables</b></h2>
                 <div className='mt-3 grid grid-cols-1 md:grid-cols-4 gap-6'>
-                {
-                            cards.map((card, i) => (
-                                <div key={i} className=' flex flex-wrap max-w-60 rounded-lg shadow-md '>
-                                    <div className='relative rounded-t-xl  flex justify-center items-center z-1'>
-                                        <img src={card.image} height="200px" width="250px" className='rounded-xl object-cover' alt="..." />
-                                       
-                                    </div>
-                                  
+                    {
+                        cards.map((card, i) => (
+                            <div key={i} className=' flex flex-wrap max-w-60 rounded-lg shadow-md '>
+                                <div className='relative rounded-t-xl  flex justify-center items-center z-1'>
+                                    <img src={card.image} height="200px" width="250px" className='rounded-xl object-cover' alt="..." />
+
                                 </div>
-                            ))
-                        }
+
+                            </div>
+                        ))
+                    }
                 </div></div>
 
-                <div className='w-8/12 m-auto '>
+            <div className='w-8/12 m-auto '>
                 <h2 className='text-2xl mt-4 ' >
                     <b>Your Daily Staples</b></h2>
                 <div className='mt-3 grid grid-cols-1 md:grid-cols-6 gap-6'>
-                {
-                            Daily.map((card, i) => (
-                                <div key={i} className=' flex flex-wrap max-w-60 rounded-lg shadow-md '>
-                                    <div className='relative rounded-t-xl  flex justify-center items-center z-1'>
-                                        <img src={card.image} height="200px" width="250px" className='rounded-xl object-cover' alt="..." />
-                                       
-                                    </div>
-                                  
+                    {
+                        Daily.map((card, i) => (
+                            <div key={i} className=' flex flex-wrap max-w-60 rounded-lg shadow-md '>
+                                <div className='relative rounded-t-xl  flex justify-center items-center z-1'>
+                                    <img src={card.image} height="200px" width="250px" className='rounded-xl object-cover' alt="..." />
+
                                 </div>
-                            ))
-                        }
+
+                            </div>
+                        ))
+                    }
                 </div></div>
+
+            <div className='mt-3'>
+
+            </div>
+
         </>
     )
 }

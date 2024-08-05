@@ -92,6 +92,12 @@ export default function Navbar() {
           </div>
               </li>
               <li className='linavbarrr'>|</li>
+
+              <li className={`linavbarrr   ${page === "cart" ? "active" : null}`} onClick={() => { setPage("cart"); handleclick() }} >Cart</li>
+              <li className={`linavbarrr   ${page === "wish" ? "active" : null}`} onClick={() => { setPage("wish"); handleclick() }} >Wish</li>
+
+             
+
             </ul>
           </div>
         </div>

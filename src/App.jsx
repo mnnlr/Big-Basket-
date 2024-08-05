@@ -8,6 +8,9 @@ import Signup from "./Pages/Signup";
 import Fruits from "./Pages/Fruits";
 import Tea from "./Pages/Tea";
 import Nandini from "./Pages/Nandini";
+import CardView from "./Pages/CardView";
+import Cart from "./Pages/Cart";
+import { WishView } from "./Pages/WishView";
 
 
 function App() {
@@ -26,6 +29,12 @@ function App() {
 
 
     <Route path="/signup" element={<Signup/>} />
+    <Route path="/view" element={<CardView  />} />
+    <Route path="/cart" element={<Cart />} />
+    <Route path="/wish" element={<WishView />} />
+
+
+    
     
 
 
