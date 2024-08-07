@@ -22,18 +22,8 @@ export default function Landing() {
     if(page === "cart") return(<><Navbar /><Cart /><Footer/></>)
     if(page === "wish") return(<><Navbar /><WishView/><Footer/></>)
 
-
-
-
-
-
-
-
-
-
-
-  return (
-    <Home />
+ return (
+ <></>
   )
 }
 const cards = [

@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { GiEmptyMetalBucket } from "react-icons/gi";
+import { MdDelete } from "react-icons/md";
 
 import { useNavigate } from 'react-router';
+import { useCart } from '../ContextApi/CartContextProvider';
 const Cart = () => {
+  const {removeFromCart} =useCart()
   const [carts,setCart] = useState([])
   const [show,setShow] = useState(false)
   const [price,setPrice] = useState(0)
@@ -17,14 +19,13 @@ const Cart = () => {
             Authorization: localStorage.getItem("token")
           }
         });
-        cart = (response.data.items)
-        // console.log(cart)
-        if(cart.length != 0){
-          setShow(true)
-          const totalPrice = cart.reduce((acc, item) => acc + item.price, 0);
+        const cartItems = response.data.items;
+        setCart(cartItems);
+        setShow(cartItems.length > 0);
+
+       
+        const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
         setPrice(totalPrice);
-        }
-        setCart(response.data.items)
       } catch (error) {
         alert("Error")
       }
@@ -33,6 +34,51 @@ const Cart = () => {
     servercall();    
     },[]);
 
+
+    // const RemoveFromCart = async (productId) => {
+    //   if (localStorage.getItem("token")) {
+    //     try {
+    //       const response = await axios.post(
+    //         "http://localhost:5300/cartRouter/removeCart",
+    //         { productId },
+    //         {
+    //           headers: {
+    //             Authorization: ` ${localStorage.getItem("token")}`
+    //           }
+    //         }
+    //       );
+    //       if (response.status === 200) {
+    //         const updatedCart = carts.filter(item => item.productId !== productId);
+    //         setCart(updatedCart);
+    //         const newTotalPrice = updatedCart.reduce((acc, item) => acc + item.price, 0);
+    //       setPrice(newTotalPrice);
+    //         alert("Removed from Cart");
+    //       }
+    //     } catch (error) {
+    //       console.log("Error removing from Cart:", error.response?.data || error);
+    //       alert("Failed to remove from Cart.");
+    //     }
+    //   } else {
+    //     navigate("/signup");
+    //   }
+
+    const handleRemoveFromCart = async (productId) => {
+      if (localStorage.getItem("token")) {
+        try {
+          await removeFromCart(productId);
+          const updatedCart = carts.filter(item => item.productId !== productId);
+          setCart(updatedCart);
+          const newTotalPrice = updatedCart.reduce((acc, item) => acc + item.price, 0);
+          setPrice(newTotalPrice);
+        } catch (error) {
+          console.error("Error removing from Cart:", error.response?.data || error);
+          alert("Failed to remove from Cart.");
+        }
+      } else {
+        navigate("/signup");
+      }
+    };
+    
     
   return (
     <>
@@ -48,7 +94,7 @@ const Cart = () => {
                 <img src={item.image} className='w-24 h-auto p-1' alt="" />
                 <h1>{item.title}</h1>
                 <h2>{item.price}</h2>
-          
+                <MdDelete  onClick={() => handleRemoveFromCart(item.productId)}  className='text-red-600 size-6 cursor-pointer' />
               </div>
             ))
           }

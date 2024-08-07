@@ -186,7 +186,7 @@ export default function Home() {
 
 
             
-            <div className='w-8/12 m-auto '>
+            <div className='w-8/12 m-auto pt-10 '>
                 <h2 className='text-2xl mt-1 ml-6' >
                     <b>My Smart Basket</b></h2>
 

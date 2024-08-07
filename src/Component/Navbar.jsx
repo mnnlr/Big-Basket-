@@ -1,16 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import "./Navbar.css";
- 
 import { useRecoilState } from 'recoil';
 import { PageState } from '../../State';
 import { Link } from 'react-router-dom';
-import { FaCompass } from "react-icons/fa";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { HiOutlineMenu } from "react-icons/hi";
-
 import Dropdown from './DropDown';
-import DropDownlist from './DropDownlist';
+
+import WishlistCount from './WishlistCount';
+import CartlistCount from './Cartcount';
+import { useCart } from '../ContextApi/CartContextProvider';
+import { useWish } from '../ContextApi/WishContextProvider';
+import axios from 'axios';
+
+
+
+
 export default function Navbar() {
+
+  const {setCartlistCount} = useCart()
+  const {setWishlistCount} = useWish()
+
   const [mobile, setMobile] = useState(false);
   const [page, setPage] = useRecoilState(PageState)
   const [login, setLogin] = useState('')
@@ -21,12 +31,42 @@ export default function Navbar() {
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
       setLogin(true)
+      
     }
   })
-  function logout() {
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        if (token) {
+          // Fetch cart count and wishlist count
+          const cartResponse = await axios.get("http://localhost:5300/cartRouter/count", {
+            headers: { Authorization: token }
+          });
+          setCartlistCount(cartResponse.data.count);
+  
+          const wishlistResponse = await axios.get("http://localhost:5300/wishRouter/count", {
+            headers: { Authorization: token }
+          });
+          setWishlistCount(wishlistResponse.data.count);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
+  function handlelogout() {
     localStorage.removeItem("token")
     setLogin(false)
+    setCartlistCount(0)
+    setWishlistCount(0)
     navigate("/")
+
+  
   }
 
   const[liopen,setLiopen]=useState(false)
@@ -49,8 +89,11 @@ export default function Navbar() {
             <button className='bg-gray-300 ml-4 p-1 text-black rounded-lg pl-10 h-10 location '>Select Location</button>
             {
               login ? (
-                <button className='buttonn text-white' onClick={logout} >Logout</button>
+                <button className='buttonn text-white' onClick={handlelogout} >Logout</button>
+
+
               ) : <Link to="/signup" ><button className="buttonn text-white">Login/Sign<br/>up</button></Link>
+              
             }
           </div>
 
@@ -93,10 +136,9 @@ export default function Navbar() {
               </li>
               <li className='linavbarrr'>|</li>
 
-              <li className={`linavbarrr   ${page === "cart" ? "active" : null}`} onClick={() => { setPage("cart"); handleclick() }} >Cart</li>
-              <li className={`linavbarrr   ${page === "wish" ? "active" : null}`} onClick={() => { setPage("wish"); handleclick() }} >Wish</li>
+              <li className={`linavbarrr   ${page === "cart" ? "active" : null}`} onClick={() => { setPage("cart"); handleclick() }} ><CartlistCount/></li>
+              <li className={`linavbarrr   ${page === "wish" ? "active" : null}`} onClick={() => { setPage("wish"); handleclick() }} ><WishlistCount /></li>
 
-             
 
             </ul>
           </div>

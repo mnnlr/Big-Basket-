@@ -29,6 +29,7 @@ export const CardShow = () => {
             category={item.category}
             price={item.price}
             image={item.image}
+            productId={item._id}
             discountprice={item.discountprice}
           />
         </div>
