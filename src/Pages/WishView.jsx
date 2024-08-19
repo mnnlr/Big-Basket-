@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useWish } from '../ContextApi/WishContextProvider';
 
 export const WishView = () => {
     const navigate = useNavigate()
     const [wishs, setWishs] = useState([])
+    const {removeFromWish} = useWish()
 
     useEffect(() => {
         let wish = [];
@@ -25,6 +27,19 @@ export const WishView = () => {
         serverCall();
     }, [])
 
+    const handleRemoveFromWish = async (productId) => {
+        if (localStorage.getItem("token")) {
+          try {
+            await removeFromWish(productId);
+            setWishs(wishs.filter(item => item.productId !== productId));
+          } catch (error) {
+            console.error("Error removing from wishlist:", error);
+          }
+        } else {
+          navigate("/signup");
+        }
+      };
+      
     // const handleClick = (wish) => {
     //     navigate('/view', { state: { product: { wish} } });
     //   };
@@ -51,10 +66,10 @@ export const WishView = () => {
                                         <p>₹{wish.discountprice} <span className='plinee'>₹{wish.price}</span></p>
                                         <div className='flex w-[280px]'>
                                             <button
-                                                // onClick={()=>handleClick(wish)}
+                                               onClick={() => handleRemoveFromWish(wish.productId)} 
                                                 className='w-5/5 bg-black bg-white-500 hover:bg-red-600 active:bg-red-700 focus:outline-none focus:ring focus:ring-red-300 w-11/12 text-white text-lg px-6 py-1 rounded-xl m-[20px]'
                                             >
-                                                VIEW
+                                                Remove 
                                             </button>
                                         </div>
                                     </div>

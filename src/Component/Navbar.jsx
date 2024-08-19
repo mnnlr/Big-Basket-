@@ -40,7 +40,7 @@ export default function Navbar() {
       try {
         const token = localStorage.getItem('token');
         if (token) {
-          // Fetch cart count and wishlist count
+          
           const cartResponse = await axios.get("http://localhost:5300/cartRouter/count", {
             headers: { Authorization: token }
           });

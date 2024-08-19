@@ -94,11 +94,6 @@ const WishContextProvider = ({ children }) => {
     fetchCount(); // Fetch count on mount
   }, []);
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    setWishlistCount(0); 
-    
-  };
 
   return (
     <WishContext.Provider value={{ wishlistCount, addToWish, removeFromWish, checkWishStatus,setWishlistCount }}>

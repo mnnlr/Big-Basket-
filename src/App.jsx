@@ -11,6 +11,10 @@ import Nandini from "./Pages/Nandini";
 import CardView from "./Pages/CardView";
 import Cart from "./Pages/Cart";
 import { WishView } from "./Pages/WishView";
+import AddProducts from "./Pages/AddProducts";
+import { Success } from "./Pages/Success";
+import { Cancel } from "./Pages/Cancel";
+import { Order } from "./Pages/Order";
 
 
 function App() {
@@ -32,6 +36,14 @@ function App() {
     <Route path="/view" element={<CardView  />} />
     <Route path="/cart" element={<Cart />} />
     <Route path="/wish" element={<WishView />} />
+    <Route path="/addproducts" element={<AddProducts />} />
+    <Route path="/success" element={<Success />} />
+
+    <Route path="/Cancel" element={<Cancel />} />
+    <Route path="/order" element={<Order />} />
+
+
+
 
 
     
